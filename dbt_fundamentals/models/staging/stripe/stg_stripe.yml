@@ -1,0 +1,16 @@
+version: 2 
+
+models: 
+  - name: stg_payments
+    description: payments table 
+    columns:
+      - name: payment_id 
+        tests: 
+          - unique 
+          - not_null
+      - name: status 
+        tests:
+          - accepted_values:  
+              values: 
+                - success 
+                - fail 
