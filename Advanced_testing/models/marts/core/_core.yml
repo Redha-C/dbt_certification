@@ -1,0 +1,14 @@
+version: 2 
+
+models:
+  - name: dim_customers
+    description: one record per customer 
+    columns:    
+      - name: customer_id 
+        description: primary key 
+        tests:  
+          - unique 
+          - not_null 
+          - relationships: 
+              to: ref('stg_customers')
+              field: customer_id
